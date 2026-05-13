@@ -34,7 +34,7 @@ export default function ContactPage() {
         <ContactCard
           icon={MapPin}
           label="Where we are"
-          value="Aalborg · Copenhagen"
+          value="Lyshøjen 14B, 8520 Lystrup, Denmark"
         />
         <ContactCard
           icon={ExternalLink}

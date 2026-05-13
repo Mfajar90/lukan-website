@@ -16,12 +16,12 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-40 bg-ink/80 backdrop-blur-md border-b border-bone/5">
-      <div className="container-page flex items-center justify-between h-16">
+      <div className="container-page flex items-center justify-between h-24">
         <Link href="/" className="flex items-center" aria-label="Lukan Wind Robotics — Home">
           <img
             src="/brand/lukan-lockup-horizontal-dark.svg"
             alt="Lukan Wind Robotics"
-            className="h-9 w-auto"
+            className="h-16 w-auto"
           />
         </Link>
 

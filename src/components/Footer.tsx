@@ -14,8 +14,8 @@ export default function Footer() {
             />
             <p className="text-sm text-bone/60 max-w-sm leading-relaxed">
               Light wherever the asset is. Autonomous crawler robots for
-              internal wind turbine blade inspection — engineered in Aalborg
-              and Copenhagen, deployed across Europe.
+              internal wind turbine blade inspection — engineered in Lystrup,
+              Denmark, deployed across Europe.
             </p>
           </div>
 
@@ -43,7 +43,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2 text-bone/70">
                 <MapPin className="w-3.5 h-3.5 mt-1 flex-shrink-0" />
-                <span>Aalborg · Copenhagen</span>
+                <span>Lyshøjen 14B, 8520 Lystrup, Denmark</span>
               </li>
             </ul>
           </div>

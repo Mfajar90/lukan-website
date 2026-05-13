@@ -5,7 +5,7 @@ import Reveal from '@/components/Reveal';
 
 export const metadata: Metadata = {
   title: 'About',
-  description: 'About Lukan Wind Robotics — Danish robotics company building autonomous internal blade inspection crawlers. Aalborg / Copenhagen.',
+  description: 'About Lukan Wind Robotics — Danish robotics company building autonomous internal blade inspection crawlers. Based in Lystrup, Denmark.',
 };
 
 export default function AboutPage() {
@@ -64,15 +64,14 @@ export default function AboutPage() {
               Engineered in Denmark. Deployed wherever the blade is.
             </h2>
             <p className="mt-5 text-bone/70 leading-relaxed">
-              We&apos;re based across Aalborg and Copenhagen, with deep links
-              into the Danish wind cluster &mdash; including ongoing
-              collaboration with DTU on internal-damage AI. Customers and
-              pilots span Northern Europe; our crawlers travel where the
-              turbines are.
+              We&apos;re based in Lystrup, just outside Aarhus, in the heart
+              of the Danish wind cluster &mdash; including ongoing collaboration
+              with DTU on internal-damage AI. Customers and pilots span
+              Northern Europe; our crawlers travel where the turbines are.
             </p>
             <div className="mt-6 flex items-center gap-2 text-sm text-bone/60">
               <MapPin className="w-4 h-4" />
-              <span>Aalborg &middot; Copenhagen &middot; operating across Europe</span>
+              <span>Lyshøjen 14B, 8520 Lystrup, Denmark</span>
             </div>
           </Reveal>
 

@@ -22,14 +22,14 @@ export default function HomePage() {
         <div className="container-page py-20 md:py-28 relative">
           <div className="grid lg:grid-cols-[1.05fr_1fr] gap-12 lg:gap-16 items-center">
             <div>
-              {/* Big stacked mark + wordmark (2× scale) */}
+              {/* Stacked mark + wordmark */}
               <img
                 src="/brand/lukan-lockup-stacked-dark.svg"
                 alt="Lukan Wind Robotics"
-                className="h-64 md:h-[22rem] w-auto mb-10"
+                className="h-28 md:h-36 w-auto mb-10"
               />
 
-              <p className="eyebrow mb-6">Wind Robotics · Aalborg / Copenhagen</p>
+              <p className="eyebrow mb-6">Wind Robotics · Lystrup, Denmark</p>
               <h1 className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.04]">
                 Internal blade<br />inspection, <span className="text-lamp">reinvented</span>.
               </h1>
