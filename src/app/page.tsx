@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import type { LucideIcon } from 'lucide-react';
 import {
   ArrowRight,
   Cpu,
@@ -78,27 +79,24 @@ export default function HomePage() {
 
         <div className="mt-16 grid md:grid-cols-3 gap-6">
           <Reveal delay={0.0}>
-            <PhotoCard
-              src="/crawler/front-arms.jpg"
-              alt="Crawler with retractable arms"
+            <FeatureCard
+              icon={Cpu}
               tag="The crawler"
               title="CE-marked. 90 mm port compatible."
               body="Compact inspection robot engineered to navigate the confined internal chambers of wind turbine blades. LED-lit, gimbal-stabilised, battery-powered."
             />
           </Reveal>
           <Reveal delay={0.1}>
-            <PhotoCard
-              src="/crawler/ui.jpg"
-              alt="Browser-based operator interface"
+            <FeatureCard
+              icon={Gamepad2}
               tag="The operator interface"
               title="Drive from any browser."
               body="No apps, no drivers, no IT approvals. Live 360° preview, joystick or gamepad input, real-time telemetry — all on the device you brought."
             />
           </Reveal>
           <Reveal delay={0.2}>
-            <PhotoCard
-              src="/crawler/inspection.jpg"
-              alt="Inspection in progress at site"
+            <FeatureCard
+              icon={Camera}
               tag="The outcome"
               title="Findings, traceable to the frame."
               body="On-board NVMe stores every recording with full metadata. Download via the built-in viewer — or push to the Lukan cloud portal for fleet-scale review."
@@ -176,21 +174,25 @@ function Stat({ label, value, sub }: { label: string; value: string; sub: string
   );
 }
 
-function PhotoCard({ src, alt, tag, title, body }: { src: string; alt: string; tag: string; title: string; body: string }) {
+function FeatureCard({
+  icon: Icon,
+  tag,
+  title,
+  body,
+}: {
+  icon: LucideIcon;
+  tag: string;
+  title: string;
+  body: string;
+}) {
   return (
-    <article className="rounded-2xl border border-bone/10 bg-bone/[0.02] overflow-hidden hover:border-lamp/30 transition-colors group">
-      <div className="aspect-[4/3] overflow-hidden bg-ink">
-        <img
-          src={src}
-          alt={alt}
-          className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700"
-        />
+    <article className="rounded-2xl border border-bone/10 bg-bone/[0.02] p-7 hover:border-lamp/30 transition-colors h-full">
+      <div className="w-10 h-10 rounded-xl bg-lamp/10 flex items-center justify-center mb-5">
+        <Icon className="w-5 h-5 text-lamp" />
       </div>
-      <div className="p-6">
-        <p className="text-[10px] uppercase tracking-[0.25em] text-lamp/80 font-mono mb-2">{tag}</p>
-        <h3 className="text-lg font-semibold text-bone">{title}</h3>
-        <p className="mt-3 text-sm text-bone/60 leading-relaxed">{body}</p>
-      </div>
+      <p className="text-[10px] uppercase tracking-[0.25em] text-lamp/80 font-mono mb-2">{tag}</p>
+      <h3 className="text-lg font-semibold text-bone">{title}</h3>
+      <p className="mt-3 text-sm text-bone/60 leading-relaxed">{body}</p>
     </article>
   );
 }

@@ -43,36 +43,25 @@ export default function TechnologyPage() {
 
       {/* The crawler */}
       <section className="container-page py-20">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <Reveal>
-            <p className="eyebrow mb-3">The crawler</p>
-            <h2 className="text-3xl font-bold tracking-tight">
-              CE-marked. Battery-powered. Operator-friendly.
-            </h2>
-            <p className="mt-5 text-bone/70 leading-relaxed">
-              A compact inspection robot engineered to navigate the confined
-              internal chambers of wind turbine blades. Retractable arms, full
-              LED illumination, gimbal-stabilised 360° camera, and a ruggedised
-              transport case that fits a charged battery, the crawler, and the
-              control cable in a single carry.
-            </p>
-            <div className="mt-8 grid grid-cols-2 gap-3">
-              <SpecBox label="Port compatibility" value="90 mm inspection port" />
-              <SpecBox label="Capture" value="3840 × 1920 @ 30 fps · 360°" />
-              <SpecBox label="Storage" value="116 GB on-board NVMe SSD" />
-              <SpecBox label="Operating mode" value="Tethered or wireless · fully offline" />
-            </div>
-          </Reveal>
+        <Reveal>
+          <p className="eyebrow mb-3">The crawler</p>
+          <h2 className="text-3xl font-bold tracking-tight max-w-3xl">
+            CE-marked. Battery-powered. Operator-friendly.
+          </h2>
+          <p className="mt-5 text-bone/70 leading-relaxed max-w-2xl">
+            A compact inspection robot engineered to navigate the confined
+            internal chambers of wind turbine blades. Retractable arms, full
+            LED illumination, gimbal-stabilised 360° camera, and a ruggedised
+            transport case that fits a charged battery, the crawler, and the
+            control cable in a single carry.
+          </p>
+        </Reveal>
 
-          <Reveal delay={0.1}>
-            <div className="rounded-3xl overflow-hidden border border-bone/10 shadow-[0_30px_80px_-30px_rgba(255,184,77,0.4)]">
-              <img
-                src="/crawler/front-arms.jpg"
-                alt="Lukan crawler with retractable arms extended"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </Reveal>
+        <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-3">
+          <Reveal delay={0.0}><SpecBox label="Port compatibility" value="90 mm inspection port" /></Reveal>
+          <Reveal delay={0.05}><SpecBox label="Capture" value="3840 × 1920 @ 30 fps · 360°" /></Reveal>
+          <Reveal delay={0.1}><SpecBox label="Storage" value="116 GB on-board NVMe SSD" /></Reveal>
+          <Reveal delay={0.15}><SpecBox label="Operating mode" value="Tethered or wireless · fully offline" /></Reveal>
         </div>
       </section>
 
@@ -150,37 +139,26 @@ export default function TechnologyPage() {
       <section className="container-page py-20">
         <Reveal>
           <div className="rounded-3xl border border-bone/10 bg-gradient-to-br from-bone/[0.02] to-transparent p-10 md:p-14">
-            <div className="grid md:grid-cols-[1fr_1.1fr] gap-10 items-center">
-              <div>
-                <p className="eyebrow mb-3">Optional · Cloud portal</p>
-                <h2 className="text-3xl font-bold tracking-tight">
-                  When you have a fleet, you have a portal.
-                </h2>
-                <p className="mt-5 text-bone/70 leading-relaxed">
-                  For organisations operating multiple turbines, Lukan&apos;s
-                  cloud portal stores inspections, lets reviewers flag findings,
-                  generates branded PDF reports, and shares secure read-only
-                  views with stakeholders. Same offline-first crawler &mdash;
-                  add the portal when you need the scale.
-                </p>
-                <div className="mt-7">
-                  <a
-                    href="https://portal.lukan.dk"
-                    target="_blank"
-                    rel="noopener"
-                    className="btn-ghost text-sm"
-                  >
-                    Open the portal <ArrowRight className="w-4 h-4" />
-                  </a>
-                </div>
-              </div>
-              <div className="rounded-2xl overflow-hidden border border-bone/10">
-                <img
-                  src="/crawler/ui.jpg"
-                  alt="Operator interface inside the crawler"
-                  className="w-full h-full object-cover"
-                />
-              </div>
+            <p className="eyebrow mb-3">Optional · Cloud portal</p>
+            <h2 className="text-3xl font-bold tracking-tight max-w-2xl">
+              When you have a fleet, you have a portal.
+            </h2>
+            <p className="mt-5 text-bone/70 leading-relaxed max-w-2xl">
+              For organisations operating multiple turbines, Lukan&apos;s cloud
+              portal stores inspections, lets reviewers flag findings,
+              generates branded PDF reports, and shares secure read-only views
+              with stakeholders. Same offline-first crawler &mdash; add the
+              portal when you need the scale.
+            </p>
+            <div className="mt-7">
+              <a
+                href="https://portal.lukan.dk"
+                target="_blank"
+                rel="noopener"
+                className="btn-ghost text-sm"
+              >
+                Open the portal <ArrowRight className="w-4 h-4" />
+              </a>
             </div>
           </div>
         </Reveal>
