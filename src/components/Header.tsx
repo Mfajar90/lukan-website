@@ -19,9 +19,9 @@ export default function Header() {
       <div className="container-page flex items-center justify-between h-16">
         <Link href="/" className="flex items-center" aria-label="Lukan Wind Robotics — Home">
           <img
-            src="/brand/lukan-lockup-horizontal.png"
+            src="/brand/lukan-lockup-horizontal-dark.svg"
             alt="Lukan Wind Robotics"
-            className="h-7 w-auto"
+            className="h-9 w-auto"
           />
         </Link>
 

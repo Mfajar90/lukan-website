@@ -34,7 +34,7 @@ export default function ContactPage() {
         <ContactCard
           icon={MapPin}
           label="Where we are"
-          value="Denmark"
+          value="Aalborg · Copenhagen"
         />
         <ContactCard
           icon={ExternalLink}

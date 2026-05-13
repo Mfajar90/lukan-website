@@ -8,13 +8,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           <div className="md:col-span-2">
             <img
-              src="/brand/lukan-lockup-horizontal.png"
+              src="/brand/lukan-lockup-horizontal-dark.svg"
               alt="Lukan Wind Robotics"
-              className="h-7 w-auto mb-4"
+              className="h-9 w-auto mb-4"
             />
             <p className="text-sm text-bone/60 max-w-sm leading-relaxed">
-              Light wherever the asset is. 360° crawler inspection robots for wind
-              turbine blades — engineered in Denmark, deployed worldwide.
+              Light wherever the asset is. Autonomous crawler robots for
+              internal wind turbine blade inspection — engineered in Aalborg
+              and Copenhagen, deployed across Europe.
             </p>
           </div>
 
@@ -42,7 +43,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2 text-bone/70">
                 <MapPin className="w-3.5 h-3.5 mt-1 flex-shrink-0" />
-                <span>Denmark</span>
+                <span>Aalborg · Copenhagen</span>
               </li>
             </ul>
           </div>

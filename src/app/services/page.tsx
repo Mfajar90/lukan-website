@@ -1,141 +1,186 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRight, Wind, FileText, Cloud, ClipboardCheck, Check } from 'lucide-react';
+import { ArrowRight, Box, Wrench, Headphones, GraduationCap, Check } from 'lucide-react';
+import Reveal from '@/components/Reveal';
 
 export const metadata: Metadata = {
-  title: 'Services',
-  description: 'Lukan Wind Robotics services — blade inspection campaigns, reporting and cloud delivery for wind farm operators.',
+  title: 'How we work',
+  description: 'Lukan Wind Robotics — buy the crawler, hire us for the inspection, or partner on a pilot. Built for operators, OEMs, and service firms.',
 };
 
 export default function ServicesPage() {
   return (
     <>
       <section className="container-page py-20 md:py-28">
-        <p className="eyebrow mb-4">Services</p>
-        <h1 className="text-4xl md:text-5xl font-bold tracking-tight max-w-3xl leading-[1.1]">
-          One partner from blade to boardroom.
-        </h1>
-        <p className="mt-6 text-lg text-bone/70 max-w-2xl leading-relaxed">
-          We don&apos;t just hand you a video drive. Lukan campaigns include
-          deployment, capture, review, defect classification, reporting and
-          delivery — packaged so your operations and asset-management teams can
-          act on findings on day one.
-        </p>
+        <Reveal>
+          <p className="eyebrow mb-4">How we work</p>
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight max-w-3xl leading-[1.05]">
+            Buy the crawler, hire us to inspect, or pilot together.
+          </h1>
+          <p className="mt-6 text-lg text-bone/70 max-w-2xl leading-relaxed">
+            Lukan is a product. The Lukan crawler is what we ship. But we know
+            the first step is rarely a purchase order &mdash; so we work with
+            you on whichever shape makes sense.
+          </p>
+        </Reveal>
       </section>
 
       <hr className="hairline" />
 
       <section className="container-page py-20">
         <div className="grid md:grid-cols-3 gap-6">
-          <ServiceCard
-            icon={Wind}
-            title="Blade inspection campaigns"
-            bullets={[
-              'On-site mobilisation across Europe',
-              '360° capture of every blade, both sides',
-              'Coverage independent of weather windows',
-              'Operator on the ground — no rope crews',
-            ]}
-          />
-          <ServiceCard
-            icon={ClipboardCheck}
-            title="Finding review & classification"
-            bullets={[
-              'In-house reviewers with blade-defect training',
-              'Severity classified 0–5 per industry standard',
-              'Layer, dimensions and root cause logged',
-              'AI-assisted detection on long video',
-            ]}
-          />
-          <ServiceCard
-            icon={FileText}
-            title="Reporting & delivery"
-            bullets={[
-              'Branded PDF report per turbine',
-              'CSV summary for asset management systems',
-              'Findings traceable to source frame',
-              'Cloud portal access for your team',
-            ]}
-          />
+          <Reveal delay={0.0}>
+            <Path
+              icon={Box}
+              tag="Path 01"
+              title="Buy the crawler"
+              for="Operators and service firms running in-house inspections."
+              bullets={[
+                'Crawler + transport case + battery kit',
+                'Browser-based operator software, lifetime updates',
+                'Operator training (1 day, on-site or remote)',
+                'CE marked, ready for European deployment',
+              ]}
+            />
+          </Reveal>
+
+          <Reveal delay={0.1}>
+            <Path
+              icon={Wrench}
+              tag="Path 02"
+              title="Hire us to inspect"
+              for="Asset owners with a single fleet who want the data without the hardware."
+              bullets={[
+                'Lukan operator + crawler on site',
+                'Per-blade or per-turbine pricing',
+                'Branded PDF report + raw 360° viewer',
+                'Optional cloud portal access for stakeholders',
+              ]}
+            />
+          </Reveal>
+
+          <Reveal delay={0.2}>
+            <Path
+              icon={GraduationCap}
+              tag="Path 03"
+              title="Run a joint pilot"
+              for="OEMs, universities, and groups exploring internal-inspection programmes."
+              bullets={[
+                'Co-designed pilot scope (1–3 turbines)',
+                'Findings vs. existing inspection method',
+                'Joint case study on completion',
+                'Pricing structured for early adopters',
+              ]}
+            />
+          </Reveal>
         </div>
       </section>
 
       <hr className="hairline" />
 
-      {/* Who it&apos;s for */}
       <section className="container-page py-20">
         <div className="grid md:grid-cols-2 gap-12 items-start">
-          <div>
+          <Reveal>
             <p className="eyebrow mb-3">Who it&apos;s for</p>
             <h2 className="text-3xl font-bold tracking-tight">
-              Wind farm operators, OEMs, and IPPs.
+              Wind operators, OEMs, service firms, and the people who insure them.
             </h2>
             <p className="mt-5 text-bone/70 leading-relaxed">
-              We work with asset owners and operators across onshore and offshore
-              wind. Whether you&apos;re running periodic inspections under your
-              O&amp;M contract or chasing down warranty claims, our deliverables fit
-              into your existing workflow.
+              Our customers include large utilities running their own fleets,
+              service firms expanding into internal inspection, and academic
+              partners (we work closely with DTU). If you operate, service,
+              insure, or finance wind assets, we&apos;d love to talk.
             </p>
-          </div>
+          </Reveal>
 
-          <ul className="space-y-3">
-            <Bullet>Annual or post-event blade inspections</Bullet>
-            <Bullet>Warranty / end-of-warranty surveys</Bullet>
-            <Bullet>Lightning strike and storm damage assessment</Bullet>
-            <Bullet>Pre-acquisition due diligence</Bullet>
-            <Bullet>Repair verification follow-ups</Bullet>
-          </ul>
+          <Reveal delay={0.1}>
+            <ul className="space-y-3">
+              <Bullet>Annual or post-event blade inspections</Bullet>
+              <Bullet>Warranty &amp; end-of-warranty surveys</Bullet>
+              <Bullet>Lightning strike and storm-damage assessment</Bullet>
+              <Bullet>Pre-acquisition due diligence on wind portfolios</Bullet>
+              <Bullet>Repair verification &amp; follow-up inspections</Bullet>
+            </ul>
+          </Reveal>
         </div>
       </section>
 
       <hr className="hairline" />
 
-      {/* Engagement model */}
       <section className="container-page py-20">
-        <p className="eyebrow mb-3">Engagement</p>
-        <h2 className="text-3xl font-bold tracking-tight max-w-3xl">
-          A campaign in four steps.
-        </h2>
+        <Reveal>
+          <p className="eyebrow mb-3">Engagement</p>
+          <h2 className="text-3xl font-bold tracking-tight max-w-3xl">
+            From first email to delivered data &mdash; one short loop.
+          </h2>
+        </Reveal>
 
         <ol className="mt-12 grid md:grid-cols-4 gap-6">
-          <Step n="01" title="Scoping" body="You share fleet, turbine types and timing. We propose a campaign plan and quote." />
-          <Step n="02" title="Mobilisation" body="Crawler and operator on site. Inspections start the day we arrive — no scaffold setup days." />
-          <Step n="03" title="Review" body="Recordings go to our cloud portal. Reviewers classify findings within 5 working days." />
-          <Step n="04" title="Delivery" body="PDF reports + CSV + portal access handed over. Your team can audit every finding back to the source frame." />
+          {[
+            { n: '01', title: 'Scoping', body: 'You share fleet, turbine types, and timing. We propose a fit and a quote.' },
+            { n: '02', title: 'Pilot or order', body: 'Pilot a turbine or place an order. Operator training scheduled in parallel.' },
+            { n: '03', title: 'Inspect', body: 'Either your team or ours operates the crawler. Data captured on-board, offline.' },
+            { n: '04', title: 'Deliver', body: 'PDF report + raw 360° + JSON metadata. Cloud portal access if you need fleet-level review.' },
+          ].map((s, i) => (
+            <Reveal key={s.n} delay={i * 0.08} as="div">
+              <li>
+                <p className="font-mono text-xs text-lamp/70 mb-3">{s.n}</p>
+                <h3 className="text-base font-semibold text-bone mb-2">{s.title}</h3>
+                <p className="text-sm text-bone/60 leading-relaxed">{s.body}</p>
+              </li>
+            </Reveal>
+          ))}
         </ol>
       </section>
 
       <hr className="hairline" />
 
-      {/* CTA */}
-      <section className="container-page py-24">
-        <div className="rounded-3xl bg-gradient-to-br from-lamp/15 via-ink to-ink border border-lamp/20 p-10 md:p-14">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight max-w-2xl">
-            Tell us about your fleet.
-          </h2>
-          <p className="mt-4 text-bone/70 max-w-xl">
-            Site list, turbine types, target window — we&apos;ll come back with a
-            campaign plan within a few working days.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/contact" className="btn-primary">
-              Request a quote <ArrowRight className="w-4 h-4" />
-            </Link>
-            <a href="mailto:info@lukan.dk" className="btn-ghost">info@lukan.dk</a>
+      <Reveal>
+        <section className="container-page py-24">
+          <div className="rounded-3xl bg-gradient-to-br from-lamp/12 via-ink to-ink border border-lamp/20 p-10 md:p-14">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight max-w-2xl">
+              Tell us about your fleet.
+            </h2>
+            <p className="mt-4 text-bone/70 max-w-xl">
+              Sites, turbine types, target window &mdash; we&apos;ll come back
+              with a fit and a price within a few working days.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link href="/contact" className="btn-primary">
+                Get in touch <ArrowRight className="w-4 h-4" />
+              </Link>
+              <a href="mailto:info@lukan.dk" className="btn-ghost">info@lukan.dk</a>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </Reveal>
     </>
   );
 }
 
-function ServiceCard({ icon: Icon, title, bullets }: { icon: any; title: string; bullets: string[] }) {
+function Path({
+  icon: Icon,
+  tag,
+  title,
+  for: forText,
+  bullets,
+}: {
+  icon: any;
+  tag: string;
+  title: string;
+  for: string;
+  bullets: string[];
+}) {
   return (
-    <div className="rounded-2xl border border-bone/10 bg-bone/[0.02] p-7 hover:border-lamp/30 transition-colors">
-      <div className="w-10 h-10 rounded-xl bg-lamp/10 flex items-center justify-center mb-5">
-        <Icon className="w-5 h-5 text-lamp" />
+    <article className="rounded-2xl border border-bone/10 bg-bone/[0.02] p-7 h-full hover:border-lamp/30 transition-colors">
+      <div className="flex items-center justify-between mb-5">
+        <div className="w-10 h-10 rounded-xl bg-lamp/10 flex items-center justify-center">
+          <Icon className="w-5 h-5 text-lamp" />
+        </div>
+        <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-lamp/70">{tag}</p>
       </div>
-      <h3 className="text-lg font-semibold text-bone mb-4">{title}</h3>
+      <h3 className="text-lg font-semibold text-bone mb-2">{title}</h3>
+      <p className="text-sm text-bone/60 italic mb-5">{forText}</p>
       <ul className="space-y-2">
         {bullets.map((b) => (
           <li key={b} className="text-sm text-bone/70 flex items-start gap-2">
@@ -144,7 +189,7 @@ function ServiceCard({ icon: Icon, title, bullets }: { icon: any; title: string;
           </li>
         ))}
       </ul>
-    </div>
+    </article>
   );
 }
 
@@ -153,16 +198,6 @@ function Bullet({ children }: { children: React.ReactNode }) {
     <li className="flex items-start gap-3 text-bone/80">
       <Check className="w-4 h-4 mt-0.5 text-lamp flex-shrink-0" />
       <span>{children}</span>
-    </li>
-  );
-}
-
-function Step({ n, title, body }: { n: string; title: string; body: string }) {
-  return (
-    <li>
-      <p className="font-mono text-xs text-lamp/70 mb-3">{n}</p>
-      <h3 className="text-base font-semibold text-bone mb-2">{title}</h3>
-      <p className="text-sm text-bone/60 leading-relaxed">{body}</p>
     </li>
   );
 }
