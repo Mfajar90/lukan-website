@@ -26,42 +26,48 @@ export default function TechnologyPage() {
       {/* Hero */}
       <section className="container-page py-20 md:py-28">
         <Reveal>
-          <p className="eyebrow mb-4">Technology</p>
+          <p className="eyebrow mb-4">Crawler V3</p>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight max-w-3xl leading-[1.05]">
             Built for the inside of a wind turbine blade.
           </h1>
           <p className="mt-6 text-lg text-bone/70 max-w-2xl leading-relaxed">
-            The Lukan crawler is the only autonomous robot that fits through a
-            standard 90&nbsp;mm inspection port. Once inside, it captures every
-            chamber in 360° at 4K, stores the data on-board, and hands it back
-            to your team through a browser. No cloud required.
+            The Lukan Crawler V3 inspects wind turbine blade chambers in 8K
+            360° at up to 4K stitched output, stores everything on-board, and
+            hands the data to your team through a browser. Compatible with all
+            major turbine manufacturers. Fully offline.
           </p>
         </Reveal>
       </section>
 
       <hr className="hairline" />
 
-      {/* The crawler */}
+      {/* Spec sheet */}
       <section className="container-page py-20">
         <Reveal>
-          <p className="eyebrow mb-3">The crawler</p>
+          <p className="eyebrow mb-3">Technical specifications</p>
           <h2 className="text-3xl font-bold tracking-tight max-w-3xl">
-            CE-marked. Battery-powered. Operator-friendly.
+            Field-ready hardware, no asterisks.
           </h2>
           <p className="mt-5 text-bone/70 leading-relaxed max-w-2xl">
-            A compact inspection robot engineered to navigate the confined
-            internal chambers of wind turbine blades. Retractable arms, full
-            LED illumination, gimbal-stabilised 360° camera, and a ruggedised
-            transport case that fits a charged battery, the crawler, and the
-            control cable in a single carry.
+            Compact form factor (single-person carry), 4×52 LED system,
+            NVIDIA Jetson Orin Nano on-board compute. Heavy-duty transport case
+            and remote controller ship with every unit. CE marking in progress.
           </p>
         </Reveal>
 
-        <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-3">
-          <Reveal delay={0.0}><SpecBox label="Port compatibility" value="90 mm inspection port" /></Reveal>
-          <Reveal delay={0.05}><SpecBox label="Capture" value="3840 × 1920 @ 30 fps · 360°" /></Reveal>
-          <Reveal delay={0.1}><SpecBox label="Storage" value="116 GB on-board NVMe SSD" /></Reveal>
-          <Reveal delay={0.15}><SpecBox label="Operating mode" value="Tethered or wireless · fully offline" /></Reveal>
+        <div className="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+          <Reveal delay={0.0}><SpecBox label="Size (L×W×H)" value="320 × 230 × 175 mm" /></Reveal>
+          <Reveal delay={0.04}><SpecBox label="Weight" value="3.7 kg" /></Reveal>
+          <Reveal delay={0.08}><SpecBox label="Speed" value="0 – 2 m/s" /></Reveal>
+          <Reveal delay={0.12}><SpecBox label="Battery" value="8 hr · smart sleep + spares" /></Reveal>
+          <Reveal delay={0.16}><SpecBox label="Vision" value="8K 360° + front camera" /></Reveal>
+          <Reveal delay={0.20}><SpecBox label="Video output" value="4K 360° @ 30 fps" /></Reveal>
+          <Reveal delay={0.24}><SpecBox label="Lighting" value="4 × 52 adjustable LEDs" /></Reveal>
+          <Reveal delay={0.28}><SpecBox label="Storage" value="116 GB NVMe SSD on-board" /></Reveal>
+          <Reveal delay={0.32}><SpecBox label="Compute" value="NVIDIA Jetson Orin Nano" /></Reveal>
+          <Reveal delay={0.36}><SpecBox label="Wi-Fi range" value="120 m" /></Reveal>
+          <Reveal delay={0.40}><SpecBox label="Remote access" value="Tailscale VPN · OTA updates" /></Reveal>
+          <Reveal delay={0.44}><SpecBox label="Control" value="Browser-based · no install" /></Reveal>
         </div>
       </section>
 

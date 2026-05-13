@@ -25,11 +25,11 @@ export const metadata: Metadata = {
     template: '%s · Lukan Wind Robotics',
   },
   description:
-    'Lukan Wind Robotics builds autonomous crawler robots for internal wind turbine blade inspection. 90 mm port compatible, 360° 4K capture, fully offline.',
+    'Lukan Wind Robotics builds the Crawler V3 — an autonomous internal wind turbine blade inspection robot. 8K 360° vision, browser-driven, fully offline. Compatible with all major turbine manufacturers.',
   keywords: [
     'wind turbine inspection',
     'internal blade inspection',
-    '90mm port crawler',
+    'Crawler V3',
     'autonomous blade inspection',
     'wind robotics',
     'Aalborg',
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Lukan Wind Robotics',
-    description: 'Light wherever the asset is. Autonomous internal blade inspection — through a 90 mm port.',
+    description: 'Light wherever the asset is. The Crawler V3 — internal blade inspection, reinvented.',
     url: 'https://lukan.dk',
     siteName: 'Lukan Wind Robotics',
     locale: 'en_DK',

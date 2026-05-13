@@ -34,10 +34,9 @@ export default function HomePage() {
                 Internal blade<br />inspection, <span className="text-lamp">reinvented</span>.
               </h1>
               <p className="mt-6 text-lg md:text-xl text-bone/70 max-w-xl leading-relaxed">
-                Lukan builds autonomous crawler robots that inspect wind turbine
-                blades <strong className="text-bone">from the inside</strong>. 360° panoramic video,
-                structured data, fully offline — through a 90&nbsp;mm inspection
-                port.
+                The <strong className="text-bone">Crawler V3</strong> inspects wind turbine blades from the inside &mdash;
+                8K 360° vision, browser-driven, fully offline. Compatible with all
+                major turbine manufacturers.
               </p>
 
               <div className="mt-10 flex flex-wrap gap-3">
@@ -50,10 +49,10 @@ export default function HomePage() {
               </div>
 
               <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl">
-                <Stat label="port" value="90 mm" sub="inspection-port fit" />
-                <Stat label="capture" value="360°" sub="4K equirectangular" />
-                <Stat label="cost" value="−70%" sub="vs. rope access" />
-                <Stat label="speed" value="10×" sub="faster than rope" />
+                <Stat label="vision" value="8K · 360°" sub="on-device stitched" />
+                <Stat label="weight" value="3.7 kg" sub="320 × 230 × 175 mm" />
+                <Stat label="battery" value="8 hrs" sub="full inspection day" />
+                <Stat label="vs. rope" value="−70%" sub="faster, safer" />
               </div>
             </div>
 
@@ -82,8 +81,8 @@ export default function HomePage() {
             <FeatureCard
               icon={Cpu}
               tag="The crawler"
-              title="CE-marked. 90 mm port compatible."
-              body="Compact inspection robot engineered to navigate the confined internal chambers of wind turbine blades. LED-lit, gimbal-stabilised, battery-powered."
+              title="Crawler V3, field-ready."
+              body="Compact (320 × 230 × 175 mm), 3.7 kg, 8-hour battery. 4×52 LED system, 8K 360° camera + front camera, NVIDIA Jetson Orin Nano compute. CE marking in progress."
             />
           </Reveal>
           <Reveal delay={0.1}>
@@ -91,7 +90,7 @@ export default function HomePage() {
               icon={Gamepad2}
               tag="The operator interface"
               title="Drive from any browser."
-              body="No apps, no drivers, no IT approvals. Live 360° preview, joystick or gamepad input, real-time telemetry — all on the device you brought."
+              body="No apps, no drivers, no IT approvals. 120 m Wi-Fi range, live 360° preview, gamepad-friendly. Tailscale VPN for remote diagnostics and OTA updates."
             />
           </Reveal>
           <Reveal delay={0.2}>
@@ -99,7 +98,7 @@ export default function HomePage() {
               icon={Camera}
               tag="The outcome"
               title="Findings, traceable to the frame."
-              body="On-board NVMe stores every recording with full metadata. Download via the built-in viewer — or push to the Lukan cloud portal for fleet-scale review."
+              body="116 GB on-board NVMe with structured JSON metadata (GPS, timestamps, inspection parameters). Built-in viewer, bulk ZIP export, optional video analysis service at €90 per rotor."
             />
           </Reveal>
         </div>
@@ -126,13 +125,13 @@ export default function HomePage() {
 
         <div className="mt-14 grid md:grid-cols-3 gap-6">
           <Reveal delay={0.0}>
-            <Compare icon={Gauge} title="10× faster" body="A blade inspected in hours, not days. No weather window dependency once the crawler is in." />
+            <Compare icon={Gauge} title="70% faster than rope" body="Non-destructive internal inspection that finishes inside an inspection day &mdash; no weather window dependency once the crawler is in." />
           </Reveal>
           <Reveal delay={0.1}>
-            <Compare icon={ShieldCheck} title="No technicians at height" body="The crawler does the climb. Your team operates from the ground via a browser." />
+            <Compare icon={ShieldCheck} title="No technicians at height" body="The crawler does the climb. Your team operates from the ground via any browser." />
           </Reveal>
           <Reveal delay={0.2}>
-            <Compare icon={WifiOff} title="Fully offline" body="No signal, no cloud, no data leaving the site. The crawler keeps a 116 GB NVMe of every chamber." />
+            <Compare icon={WifiOff} title="Fully offline" body="No signal, no cloud, no data leaving the site. 116 GB on-board NVMe keeps every chamber recorded locally." />
           </Reveal>
         </div>
       </section>

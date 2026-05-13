@@ -68,13 +68,13 @@ export default function HeroCrawler() {
           style={{ transform: 'translateZ(80px)' }}
           className="absolute top-6 left-2 md:left-6 px-3 py-1.5 rounded-full bg-ink/85 backdrop-blur border border-lamp/30 text-[10px] uppercase tracking-[0.18em] text-lamp"
         >
-          90 mm port
+          8K · 360°
         </motion.div>
         <motion.div
           style={{ transform: 'translateZ(80px)' }}
           className="absolute bottom-6 right-2 md:right-6 px-3 py-1.5 rounded-full bg-ink/85 backdrop-blur border border-bone/15 text-[10px] uppercase tracking-[0.18em] text-bone/80"
         >
-          360° · 4K · offline
+          3.7 kg · offline
         </motion.div>
       </motion.div>
     </div>

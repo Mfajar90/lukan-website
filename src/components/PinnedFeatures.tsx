@@ -12,24 +12,24 @@ interface Feature {
 
 const features: Feature[] = [
   {
-    badge: '01 · The port',
-    title: 'Fits where nothing else does.',
-    body: 'A 90 mm inspection port is the only access into a blade. Most robots can\'t fit. The Lukan crawler slips through with millimetres to spare.',
+    badge: '01 · The form factor',
+    title: '320 × 230 × 175 mm. 3.7 kg.',
+    body: 'Compact enough to slip through standard blade access. Compatible with all major turbine manufacturers. Battery-powered, single-person carry.',
   },
   {
     badge: '02 · The capture',
-    title: '360° at 4K — every chamber.',
-    body: 'Equirectangular panoramic capture up to 3840×1920 at 30 fps. On-device stitching means no post-processing. Every surface, every angle, every chamber.',
+    title: '8K 360° vision, 4K stitched output.',
+    body: 'An 8K panoramic camera plus a front camera for navigation. 3840×1920 equirectangular MP4 at 30 fps — stitched on-device, no post-processing needed.',
   },
   {
     badge: '03 · The autonomy',
     title: 'Offline by design.',
-    body: 'All data lives on 116 GB of on-board NVMe. No internet, no cloud dependency, no data leaving the site. Sovereignty is the default, not an option.',
+    body: '116 GB of on-board NVMe and an NVIDIA Jetson Orin Nano. No internet, no cloud dependency, no data leaving the site. Sovereignty is the default.',
   },
   {
     badge: '04 · The cockpit',
     title: 'Any browser. Any device.',
-    body: 'No apps, no drivers, no IT approvals. Drive the crawler from a laptop, a tablet, or a gamepad. Live 360° preview the whole way through.',
+    body: 'No apps, no drivers, no IT approvals. Drive over Wi-Fi (120 m range) from a laptop, tablet, or gamepad. Live 360° preview the whole way through.',
   },
 ];
 

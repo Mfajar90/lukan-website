@@ -33,13 +33,14 @@ export default function ServicesPage() {
             <Path
               icon={Box}
               tag="Path 01"
-              title="Buy the crawler"
+              title="Buy the Crawler V3"
               for="Operators and service firms running in-house inspections."
               bullets={[
-                'Crawler + transport case + battery kit',
-                'Browser-based operator software, lifetime updates',
-                'Operator training (1 day, on-site or remote)',
-                'CE marked, ready for European deployment',
+                'Crawler V3 + remote controller + cable pull-out system',
+                'Heavy-duty transport case included',
+                '3 h online training + 2 h follow-up after first inspection',
+                '12-month warranty · remote diagnostics · OTA updates',
+                'Lead time ~12 weeks from order confirmation',
               ]}
             />
           </Reveal>
@@ -53,6 +54,7 @@ export default function ServicesPage() {
               bullets={[
                 'Lukan operator + crawler on site',
                 'Per-blade or per-turbine pricing',
+                'Optional video analysis service · €90 per rotor',
                 'Branded PDF report + raw 360° viewer',
                 'Optional cloud portal access for stakeholders',
               ]}
