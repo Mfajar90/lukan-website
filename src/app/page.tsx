@@ -1,208 +1,314 @@
+'use client';
+
 import Link from 'next/link';
-import type { LucideIcon } from 'lucide-react';
-import {
-  ArrowRight,
-  Cpu,
-  WifiOff,
-  Gamepad2,
-  Camera,
-  ShieldCheck,
-  Gauge,
-} from 'lucide-react';
+import { motion, useReducedMotion } from 'framer-motion';
+import { ArrowRight, ArrowDown } from 'lucide-react';
 import Reveal from '@/components/Reveal';
-import HeroCrawler from '@/components/HeroCrawler';
-import PinnedFeatures from '@/components/PinnedFeatures';
+import HaloBackdrop, { InstrumentBar } from '@/components/HaloBackdrop';
 
 export default function HomePage() {
+  const reduced = useReducedMotion();
+
   return (
     <>
-      {/* Hero */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-lamp-glow opacity-60 pointer-events-none" aria-hidden />
-        <div className="container-page py-20 md:py-28 relative">
-          <div className="grid lg:grid-cols-[1.05fr_1fr] gap-12 lg:gap-16 items-center">
-            <div>
-              {/* Stacked mark + wordmark */}
-              <img
-                src="/brand/lukan-lockup-stacked-dark.svg"
-                alt="Lukan Wind Robotics"
-                className="h-28 md:h-36 w-auto mb-10"
-              />
+      {/* Hero — full bleed, animated halo */}
+      <section className="relative h-[calc(100vh-6rem)] min-h-[640px] flex items-center justify-center overflow-hidden">
+        <div
+          className="absolute inset-0 pointer-events-none"
+          aria-hidden
+          style={{
+            background:
+              'radial-gradient(ellipse 70% 50% at 50% 50%, rgba(255,184,77,0.18), transparent 70%)',
+          }}
+        />
 
-              <p className="eyebrow mb-6">Wind Robotics · Lystrup, Denmark</p>
-              <h1 className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.04]">
-                Internal blade<br />inspection, <span className="text-lamp">reinvented</span>.
-              </h1>
-              <p className="mt-6 text-lg md:text-xl text-bone/70 max-w-xl leading-relaxed">
-                The <strong className="text-bone">Crawler V3</strong> inspects wind turbine blades from the inside &mdash;
-                8K 360° vision, browser-driven, fully offline. Compatible with all
-                major turbine manufacturers.
-              </p>
+        <HaloBackdrop />
 
-              <div className="mt-10 flex flex-wrap gap-3">
-                <Link href="/technology" className="btn-primary">
-                  See the technology <ArrowRight className="w-4 h-4" />
-                </Link>
-                <Link href="/contact" className="btn-ghost">
-                  Talk to us
-                </Link>
-              </div>
-
-              <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl">
-                <Stat label="vision" value="8K · 360°" sub="on-device stitched" />
-                <Stat label="weight" value="3.7 kg" sub="320 × 230 × 175 mm" />
-                <Stat label="battery" value="8 hrs" sub="full inspection day" />
-                <Stat label="lead time" value="~12 wk" sub="from order confirmation" />
-              </div>
-            </div>
-
-            {/* Scroll-tilted crawler image */}
-            <div className="relative">
-              <HeroCrawler />
-            </div>
-          </div>
+        {/* Centre instrument bar */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <InstrumentBar />
         </div>
+
+        {/* Hero text */}
+        <div className="relative z-10 text-center max-w-4xl mx-auto px-6 mt-40 md:mt-56">
+          <motion.p
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.2, 0.65, 0.3, 0.9], delay: 0.1 }}
+            className="font-mono text-[10px] uppercase tracking-[0.35em] text-lamp mb-8"
+          >
+            Lukan · Crawler V3
+          </motion.p>
+          <motion.h1
+            initial={{ opacity: 0, y: 32 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, ease: [0.2, 0.65, 0.3, 0.9], delay: 0.25 }}
+            className="text-5xl md:text-8xl font-bold tracking-tight leading-[0.95]"
+          >
+            The light<br />goes <span className="italic text-lamp">inside</span>.
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, ease: [0.2, 0.65, 0.3, 0.9], delay: 0.45 }}
+            className="mt-8 text-lg md:text-xl text-bone/70 max-w-2xl mx-auto leading-relaxed"
+          >
+            An autonomous robot for internal wind turbine blade inspection. 8K
+            360° vision, fully offline, operated from any browser.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, ease: [0.2, 0.65, 0.3, 0.9], delay: 0.65 }}
+            className="mt-10 flex flex-wrap items-center justify-center gap-3"
+          >
+            <Link href="/technology" className="btn-primary">
+              See the technology <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link href="/contact" className="btn-ghost">
+              Talk to us
+            </Link>
+          </motion.div>
+        </div>
+
+        {/* Scroll hint */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2, duration: 1 }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 font-mono text-[10px] text-bone/40 uppercase tracking-[0.3em] flex items-center gap-2"
+          aria-hidden
+        >
+          Scroll
+          {!reduced && (
+            <motion.span
+              animate={{ y: [0, 4, 0] }}
+              transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
+            >
+              <ArrowDown className="w-3 h-3" />
+            </motion.span>
+          )}
+        </motion.div>
       </section>
 
-      {/* Pinned scroll feature reel */}
-      <PinnedFeatures />
-
-      {/* Three pillars (with photos) */}
-      <section className="container-page py-24">
-        <Reveal>
-          <p className="eyebrow mb-4">What it is</p>
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight max-w-3xl leading-[1.05]">
-            One robot, one cable-free workflow, one inspector with a browser.
-          </h2>
-        </Reveal>
-
-        <div className="mt-16 grid md:grid-cols-3 gap-6">
-          <Reveal delay={0.0}>
-            <FeatureCard
-              icon={Cpu}
-              tag="The crawler"
-              title="Crawler V3, field-ready."
-              body="Compact (320 × 230 × 175 mm), 3.7 kg, 8-hour battery. 4×52 LED system, 8K 360° camera + front camera, NVIDIA Jetson Orin Nano compute. CE marking in progress."
-            />
-          </Reveal>
-          <Reveal delay={0.1}>
-            <FeatureCard
-              icon={Gamepad2}
-              tag="The operator interface"
-              title="Drive from any browser."
-              body="No apps, no drivers, no IT approvals. 120 m Wi-Fi range, live 360° preview, gamepad-friendly. Tailscale VPN for remote diagnostics and OTA updates."
-            />
-          </Reveal>
-          <Reveal delay={0.2}>
-            <FeatureCard
-              icon={Camera}
-              tag="The outcome"
-              title="Findings, traceable to the frame."
-              body="116 GB on-board NVMe with structured JSON metadata (GPS, timestamps, inspection parameters). Built-in viewer, bulk ZIP export, optional video analysis service at €90 per rotor."
-            />
-          </Reveal>
-        </div>
-      </section>
-
-      <hr className="hairline" />
-
-      {/* Why internal matters */}
-      <section className="container-page py-20">
-        <Reveal>
-          <div className="max-w-3xl">
-            <p className="eyebrow mb-3">Why internal matters</p>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-              External inspection sees the surface. The damage that matters lives inside.
-            </h2>
-            <p className="mt-5 text-bone/70 leading-relaxed">
-              Drones and external crews can only see the outside of a blade.
-              But the failures that take a turbine down &mdash; spar-cap
-              delamination, shear-web cracks, lightning-strike residue in the
-              chambers &mdash; live on the inside. Lukan goes where external
-              methods can&apos;t.
+      {/* Feature 1 — Crawler form factor */}
+      <section className="min-h-screen flex items-center py-32 relative overflow-hidden">
+        <div
+          className="absolute inset-0 pointer-events-none opacity-40"
+          aria-hidden
+          style={{
+            background:
+              'radial-gradient(ellipse 70% 50% at 30% 50%, rgba(255,184,77,0.12), transparent 70%)',
+          }}
+        />
+        <div className="container-page grid lg:grid-cols-2 gap-16 items-center relative">
+          <Reveal>
+            <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-lamp mb-6">
+              01 · The crawler
             </p>
-          </div>
-        </Reveal>
+            <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.02]">
+              320 mm long.<br />3.7 kg.<br />
+              <span className="text-lamp">Single-person carry.</span>
+            </h2>
+            <p className="mt-8 text-lg text-bone/70 leading-relaxed max-w-lg">
+              Compact enough to navigate the confined chambers of a wind
+              turbine blade. Heavy-duty transport case. Remote controller.
+              Cable pull-out system. Compatible with all major turbine
+              manufacturers.
+            </p>
+          </Reveal>
 
-        <div className="mt-14 grid md:grid-cols-3 gap-6">
-          <Reveal delay={0.0}>
-            <Compare icon={Gauge} title="Inside an inspection day" body="A non-destructive internal inspection completed in a single window &mdash; no weather constraints once the crawler is in." />
-          </Reveal>
           <Reveal delay={0.1}>
-            <Compare icon={ShieldCheck} title="No technicians at height" body="The crawler does the climb. Your team operates from the ground via any browser." />
-          </Reveal>
-          <Reveal delay={0.2}>
-            <Compare icon={WifiOff} title="Fully offline" body="No signal, no cloud, no data leaving the site. 116 GB on-board NVMe keeps every chamber recorded locally." />
+            <div className="relative">
+              <div className="aspect-square rounded-3xl border border-bone/10 bg-gradient-to-br from-bone/[0.04] to-transparent backdrop-blur-sm p-8 md:p-10 flex flex-col justify-between">
+                <div>
+                  <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-bone/40">
+                    SIZE · WEIGHT · SPEED
+                  </p>
+                  <p className="mt-6 text-4xl md:text-6xl font-bold tracking-tight leading-tight">
+                    320 <span className="text-bone/40">×</span> 230{' '}
+                    <span className="text-bone/40">×</span> 175
+                  </p>
+                  <p className="font-mono text-xs text-bone/40 mt-2">millimetres</p>
+                </div>
+                <div className="grid grid-cols-2 gap-6 md:gap-8 mt-10">
+                  <div>
+                    <p className="text-3xl md:text-4xl font-bold">3.7</p>
+                    <p className="font-mono text-[10px] text-bone/40 uppercase mt-1">kg · mass</p>
+                  </div>
+                  <div>
+                    <p className="text-3xl md:text-4xl font-bold">2.0</p>
+                    <p className="font-mono text-[10px] text-bone/40 uppercase mt-1">m/s · vel_max</p>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute -bottom-4 -right-4 px-4 py-2 rounded-full bg-lamp text-ink text-xs font-bold font-mono uppercase tracking-wider">
+                8 hr battery
+              </div>
+            </div>
           </Reveal>
         </div>
       </section>
 
-      <hr className="hairline" />
+      {/* Feature 2 — Vision (flipped) */}
+      <section className="min-h-screen flex items-center py-32 relative overflow-hidden">
+        <div
+          className="absolute inset-0 pointer-events-none opacity-40"
+          aria-hidden
+          style={{
+            background:
+              'radial-gradient(ellipse 60% 50% at 70% 50%, rgba(255,184,77,0.12), transparent 70%)',
+          }}
+        />
+        <div className="container-page grid lg:grid-cols-2 gap-16 items-center relative">
+          <Reveal delay={0.1}>
+            <div className="relative aspect-square order-2 lg:order-1">
+              <HaloBackdrop dots={80} radius={0.82} rotationSeconds={60} className="" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-center">
+                  <p className="text-6xl md:text-8xl font-bold text-lamp">8K</p>
+                  <p className="font-mono text-xs text-bone/40 uppercase tracking-[0.25em] mt-2">
+                    360° vision
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+
+          <Reveal>
+            <div className="order-1 lg:order-2">
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-lamp mb-6">
+                02 · The vision
+              </p>
+              <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.02]">
+                8K panoramic.<br />Front camera.<br />
+                <span className="text-lamp">Every chamber.</span>
+              </h2>
+              <p className="mt-8 text-lg text-bone/70 leading-relaxed max-w-lg">
+                An 8K 360° camera captures the full chamber in a single pass.
+                A front camera handles navigation. On-device stitching outputs
+                4K equirectangular MP4 at 30 fps. 4×52 adjustable LEDs.
+                NVIDIA Jetson Orin Nano compute.
+              </p>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Feature 3 — Offline / sovereignty */}
+      <section className="min-h-screen flex items-center py-32 relative overflow-hidden">
+        <div
+          className="absolute inset-0 pointer-events-none opacity-40"
+          aria-hidden
+          style={{
+            background:
+              'radial-gradient(ellipse 70% 50% at 30% 50%, rgba(255,184,77,0.12), transparent 70%)',
+          }}
+        />
+        <div className="container-page grid lg:grid-cols-2 gap-16 items-center relative">
+          <Reveal>
+            <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-lamp mb-6">
+              03 · The autonomy
+            </p>
+            <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.02]">
+              Offline<br />by <span className="text-lamp">design</span>.
+            </h2>
+            <p className="mt-8 text-lg text-bone/70 leading-relaxed max-w-lg">
+              116 GB of on-board NVMe. No internet. No cloud dependency. No data
+              leaving the site unless you choose to send it. Browser-based UI,
+              120 m Wi-Fi range, Tailscale VPN for diagnostics and OTA updates.
+            </p>
+          </Reveal>
+
+          <Reveal delay={0.1}>
+            <div className="grid grid-cols-2 gap-4">
+              <FactTile big="116" unit="GB" label="On-board NVMe" />
+              <FactTile big="120" unit="m" label="Wi-Fi range" />
+              <FactTile big="0" unit="" label="Cloud required" />
+              <FactTile big="∞" unit="" label="Your data, your rules" small />
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Spec ticker */}
+      <section
+        className="border-y border-bone/10 py-24 relative overflow-hidden"
+        style={{
+          background:
+            'linear-gradient(180deg, transparent, rgba(255,184,77,0.06), transparent)',
+        }}
+      >
+        <div className="container-page">
+          <Reveal>
+            <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-bone/40 mb-12 text-center">
+              Specification · Crawler V3
+            </p>
+          </Reveal>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12">
+            <Reveal delay={0.0}><BigSpec v="116 GB" l="On-board NVMe" /></Reveal>
+            <Reveal delay={0.05}><BigSpec v="120 m" l="Wi-Fi range" /></Reveal>
+            <Reveal delay={0.1}><BigSpec v="4 × 52" l="LED system" /></Reveal>
+            <Reveal delay={0.15}><BigSpec v="3840 × 1920" l="@ 30 fps · 4K stitched" /></Reveal>
+            <Reveal delay={0.2}><BigSpec v="~12 wk" l="Lead time from PO" /></Reveal>
+            <Reveal delay={0.25}><BigSpec v="12 mo" l="Warranty + OTA" /></Reveal>
+            <Reveal delay={0.3}><BigSpec v="5 hr" l="Training included" /></Reveal>
+            <Reveal delay={0.35}><BigSpec v="€90" l="Per rotor · analysis" /></Reveal>
+          </div>
+        </div>
+      </section>
 
       {/* CTA */}
-      <Reveal>
-        <section className="container-page py-24">
-          <div className="rounded-3xl bg-gradient-to-br from-lamp/12 via-ink to-ink border border-lamp/20 p-10 md:p-14">
-            <p className="eyebrow mb-4">Get in touch</p>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight max-w-2xl">
-              Have blades to inspect? Or a fleet to support?
-            </h2>
-            <p className="mt-4 text-bone/70 max-w-xl">
-              Whether you operate the turbines, service them, or invest in the
-              companies that do &mdash; we&apos;d love to talk.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/contact" className="btn-primary">
-                Contact us <ArrowRight className="w-4 h-4" />
-              </Link>
-              <a href="mailto:info@lukan.dk" className="btn-ghost">info@lukan.dk</a>
-            </div>
+      <section className="min-h-[80vh] flex items-center py-32 relative overflow-hidden">
+        <div
+          className="absolute inset-0 pointer-events-none"
+          aria-hidden
+          style={{
+            background:
+              'radial-gradient(ellipse 70% 50% at 50% 50%, rgba(255,184,77,0.16), transparent 70%)',
+          }}
+        />
+        <Reveal className="container-page text-center relative">
+          <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-lamp mb-6">
+            Get in touch
+          </p>
+          <h2 className="text-4xl md:text-7xl font-bold tracking-tight leading-[1.02]">
+            Have blades<br />to <span className="italic text-lamp">inspect</span>?
+          </h2>
+          <p className="mt-8 text-lg text-bone/70 max-w-xl mx-auto">
+            Send us a note. We&apos;ll come back with a pilot proposal or a quote within a few working days.
+          </p>
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+            <a href="mailto:info@lukan.dk" className="btn-primary">
+              info@lukan.dk <ArrowRight className="w-4 h-4" />
+            </a>
+            <Link href="/contact" className="btn-ghost">
+              Book a walkthrough
+            </Link>
           </div>
-        </section>
-      </Reveal>
+        </Reveal>
+      </section>
     </>
   );
 }
 
-function Stat({ label, value, sub }: { label: string; value: string; sub: string }) {
+function FactTile({ big, unit, label, small }: { big: string; unit: string; label: string; small?: boolean }) {
   return (
-    <div>
-      <p className="text-[10px] uppercase tracking-[0.25em] text-bone/40 mb-2 font-mono">{label}</p>
-      <p className="text-2xl md:text-3xl font-bold text-bone">{value}</p>
-      <p className="text-xs text-bone/50 mt-1">{sub}</p>
+    <div className="rounded-2xl border border-bone/10 bg-bone/[0.02] p-6 backdrop-blur-sm">
+      <div className="flex items-baseline gap-1">
+        <p className={small ? 'text-4xl md:text-5xl font-bold' : 'text-5xl md:text-6xl font-bold'}>{big}</p>
+        {unit && <p className="text-lg text-bone/50">{unit}</p>}
+      </div>
+      <p className="font-mono text-[10px] text-bone/40 uppercase tracking-[0.25em] mt-3">{label}</p>
     </div>
   );
 }
 
-function FeatureCard({
-  icon: Icon,
-  tag,
-  title,
-  body,
-}: {
-  icon: LucideIcon;
-  tag: string;
-  title: string;
-  body: string;
-}) {
+function BigSpec({ v, l }: { v: string; l: string }) {
   return (
-    <article className="rounded-2xl border border-bone/10 bg-bone/[0.02] p-7 hover:border-lamp/30 transition-colors h-full">
-      <div className="w-10 h-10 rounded-xl bg-lamp/10 flex items-center justify-center mb-5">
-        <Icon className="w-5 h-5 text-lamp" />
-      </div>
-      <p className="text-[10px] uppercase tracking-[0.25em] text-lamp/80 font-mono mb-2">{tag}</p>
-      <h3 className="text-lg font-semibold text-bone">{title}</h3>
-      <p className="mt-3 text-sm text-bone/60 leading-relaxed">{body}</p>
-    </article>
-  );
-}
-
-function Compare({ icon: Icon, title, body }: { icon: any; title: string; body: string }) {
-  return (
-    <div className="rounded-2xl border border-bone/10 p-7">
-      <Icon className="w-5 h-5 text-lamp mb-4" />
-      <h3 className="text-base font-semibold text-bone mb-2">{title}</h3>
-      <p className="text-sm text-bone/60 leading-relaxed">{body}</p>
+    <div className="text-center">
+      <p className="text-3xl md:text-5xl font-bold text-bone">{v}</p>
+      <p className="font-mono text-[10px] text-bone/50 uppercase tracking-[0.25em] mt-2">{l}</p>
     </div>
   );
 }
