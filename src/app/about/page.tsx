@@ -41,7 +41,7 @@ export default function AboutPage() {
             <ValueCard
               icon={Shield}
               title="Operators on the ground"
-              body="If we wouldn&apos;t send a colleague up the rope on a given day, we don&apos;t send a person at all. The crawler does the climb."
+              body="If a job is too risky for a human on a given day, we don&apos;t send a human at all. The crawler does the work that used to happen inside the blade."
             />
           </Reveal>
           <Reveal delay={0.2}>

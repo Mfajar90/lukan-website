@@ -22,11 +22,11 @@ export default function HomePage() {
         <div className="container-page py-20 md:py-28 relative">
           <div className="grid lg:grid-cols-[1.05fr_1fr] gap-12 lg:gap-16 items-center">
             <div>
-              {/* Big stacked mark + wordmark */}
+              {/* Big stacked mark + wordmark (2× scale) */}
               <img
                 src="/brand/lukan-lockup-stacked-dark.svg"
                 alt="Lukan Wind Robotics"
-                className="h-32 md:h-44 w-auto mb-10"
+                className="h-64 md:h-[22rem] w-auto mb-10"
               />
 
               <p className="eyebrow mb-6">Wind Robotics · Aalborg / Copenhagen</p>
@@ -52,7 +52,7 @@ export default function HomePage() {
                 <Stat label="vision" value="8K · 360°" sub="on-device stitched" />
                 <Stat label="weight" value="3.7 kg" sub="320 × 230 × 175 mm" />
                 <Stat label="battery" value="8 hrs" sub="full inspection day" />
-                <Stat label="vs. rope" value="−70%" sub="faster, safer" />
+                <Stat label="lead time" value="~12 wk" sub="from order confirmation" />
               </div>
             </div>
 
@@ -106,26 +106,27 @@ export default function HomePage() {
 
       <hr className="hairline" />
 
-      {/* Why it beats rope */}
+      {/* Why internal matters */}
       <section className="container-page py-20">
         <Reveal>
           <div className="max-w-3xl">
-            <p className="eyebrow mb-3">Why it beats rope access</p>
+            <p className="eyebrow mb-3">Why internal matters</p>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-              External inspection misses the inside. Rope inspection misses the data.
+              External inspection sees the surface. The damage that matters lives inside.
             </h2>
             <p className="mt-5 text-bone/70 leading-relaxed">
-              Drones and rope crews can only see what&apos;s outside the blade. But
-              the structural damage that matters &mdash; spar cap delamination,
-              shear-web cracks, lightning strike residue inside the chambers
-              &mdash; lives on the inside. Lukan goes where they can&apos;t.
+              Drones and external crews can only see the outside of a blade.
+              But the failures that take a turbine down &mdash; spar-cap
+              delamination, shear-web cracks, lightning-strike residue in the
+              chambers &mdash; live on the inside. Lukan goes where external
+              methods can&apos;t.
             </p>
           </div>
         </Reveal>
 
         <div className="mt-14 grid md:grid-cols-3 gap-6">
           <Reveal delay={0.0}>
-            <Compare icon={Gauge} title="70% faster than rope" body="Non-destructive internal inspection that finishes inside an inspection day &mdash; no weather window dependency once the crawler is in." />
+            <Compare icon={Gauge} title="Inside an inspection day" body="A non-destructive internal inspection completed in a single window &mdash; no weather constraints once the crawler is in." />
           </Reveal>
           <Reveal delay={0.1}>
             <Compare icon={ShieldCheck} title="No technicians at height" body="The crawler does the climb. Your team operates from the ground via any browser." />
