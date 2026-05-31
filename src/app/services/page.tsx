@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRight, Box, Wrench, Headphones, GraduationCap, Check } from 'lucide-react';
+import { ArrowRight, Box, Wrench, GraduationCap, Check } from 'lucide-react';
 import Reveal from '@/components/Reveal';
 
 export const metadata: Metadata = {
   title: 'How we work',
-  description: 'Lukan Wind Robotics — buy the crawler, hire us for the inspection, or partner on a pilot. Built for operators, OEMs, and service firms.',
+  description:
+    'Buy Detectra, hire us to inspect, or pilot together. Built for operators, OEMs and service firms.',
 };
 
 export default function ServicesPage() {
@@ -15,12 +16,11 @@ export default function ServicesPage() {
         <Reveal>
           <p className="eyebrow mb-4">How we work</p>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight max-w-3xl leading-[1.05]">
-            Buy the crawler, hire us to inspect, or pilot together.
+            Buy or rent Detectra, hire us to inspect, or pilot together.
           </h1>
           <p className="mt-6 text-lg text-bone/70 max-w-2xl leading-relaxed">
-            Lukan is a product. The Lukan crawler is what we ship. But we know
-            the first step is rarely a purchase order &mdash; so we work with
-            you on whichever shape makes sense.
+            The first step is not necessarily a purchase order. We work with you
+            in whichever shape makes sense.
           </p>
         </Reveal>
       </section>
@@ -31,47 +31,46 @@ export default function ServicesPage() {
         <div className="grid md:grid-cols-3 gap-6">
           <Reveal delay={0.0}>
             <Path
+              id="buy"
               icon={Box}
               tag="Path 01"
-              title="Buy the Crawler V3"
+              title="Buy or rent Detectra"
               for="Operators and service firms running in-house inspections."
               bullets={[
-                'Crawler V3 + remote controller + cable pull-out system',
-                'Heavy-duty transport case included',
-                '3 h online training + 2 h follow-up after first inspection',
-                '12-month warranty · remote diagnostics · OTA updates',
-                'Lead time ~12 weeks from order confirmation',
+                'Buy outright or rent by the campaign',
+                'Crawler, transport case, controller',
+                'Operator training and follow-up',
+                'Warranty, software updates, support',
               ]}
             />
           </Reveal>
 
           <Reveal delay={0.1}>
             <Path
+              id="hire"
               icon={Wrench}
               tag="Path 02"
               title="Hire us to inspect"
-              for="Asset owners with a single fleet who want the data without the hardware."
+              for="Asset owners who want the data without the hardware."
               bullets={[
-                'Lukan operator + crawler on site',
+                'Lukan operator and crawler on site',
                 'Per-blade or per-turbine pricing',
-                'Optional video analysis service · €90 per rotor',
-                'Branded PDF report + raw 360° viewer',
-                'Optional cloud portal access for stakeholders',
+                'Branded PDF report and 360° viewer',
               ]}
             />
           </Reveal>
 
           <Reveal delay={0.2}>
             <Path
+              id="pilot"
               icon={GraduationCap}
               tag="Path 03"
               title="Run a joint pilot"
-              for="OEMs, universities, and groups exploring internal-inspection programmes."
+              for="OEMs, universities, and groups exploring internal inspection."
               bullets={[
-                'Co-designed pilot scope (1–3 turbines)',
-                'Findings vs. existing inspection method',
+                'Co-designed scope (1–3 turbines)',
+                'Findings versus your current method',
                 'Joint case study on completion',
-                'Pricing structured for early adopters',
               ]}
             />
           </Reveal>
@@ -85,13 +84,12 @@ export default function ServicesPage() {
           <Reveal>
             <p className="eyebrow mb-3">Who it&apos;s for</p>
             <h2 className="text-3xl font-bold tracking-tight">
-              Wind operators, OEMs, service firms, and the people who insure them.
+              Operators, OEMs, service firms, and the people who insure them.
             </h2>
             <p className="mt-5 text-bone/70 leading-relaxed">
-              Our customers include large utilities running their own fleets,
-              service firms expanding into internal inspection, and academic
-              partners (we work closely with DTU). If you operate, service,
-              insure, or finance wind assets, we&apos;d love to talk.
+              Large utilities running their own fleets, service firms expanding
+              into internal inspection, and academic partners. If you operate,
+              service, insure, or finance wind assets, we&apos;d love to talk.
             </p>
           </Reveal>
 
@@ -100,8 +98,8 @@ export default function ServicesPage() {
               <Bullet>Annual or post-event blade inspections</Bullet>
               <Bullet>Warranty &amp; end-of-warranty surveys</Bullet>
               <Bullet>Lightning strike and storm-damage assessment</Bullet>
-              <Bullet>Pre-acquisition due diligence on wind portfolios</Bullet>
-              <Bullet>Repair verification &amp; follow-up inspections</Bullet>
+              <Bullet>Pre-acquisition due diligence</Bullet>
+              <Bullet>Repair verification &amp; follow-up</Bullet>
             </ul>
           </Reveal>
         </div>
@@ -120,9 +118,9 @@ export default function ServicesPage() {
         <ol className="mt-12 grid md:grid-cols-4 gap-6">
           {[
             { n: '01', title: 'Scoping', body: 'You share fleet, turbine types, and timing. We propose a fit and a quote.' },
-            { n: '02', title: 'Pilot or order', body: 'Pilot a turbine or place an order. Operator training scheduled in parallel.' },
-            { n: '03', title: 'Inspect', body: 'Either your team or ours operates the crawler. Data captured on-board, offline.' },
-            { n: '04', title: 'Deliver', body: 'PDF report + raw 360° + JSON metadata. Cloud portal access if you need fleet-level review.' },
+            { n: '02', title: 'Pilot or order', body: 'Pilot a turbine or place an order. Training scheduled in parallel.' },
+            { n: '03', title: 'Inspect', body: 'Your team or ours operates Detectra. Capture is offline, on-board.' },
+            { n: '04', title: 'Deliver', body: 'PDF report, 360° viewer, structured metadata. Fenestra access if you need fleet-level review.' },
           ].map((s, i) => (
             <Reveal key={s.n} delay={i * 0.08} as="div">
               <li>
@@ -144,8 +142,8 @@ export default function ServicesPage() {
               Tell us about your fleet.
             </h2>
             <p className="mt-4 text-bone/70 max-w-xl">
-              Sites, turbine types, target window &mdash; we&apos;ll come back
-              with a fit and a price within a few working days.
+              Sites, turbine types, target window — we&apos;ll come back with a
+              fit and a price within a few working days.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/contact" className="btn-primary">
@@ -161,12 +159,14 @@ export default function ServicesPage() {
 }
 
 function Path({
+  id,
   icon: Icon,
   tag,
   title,
   for: forText,
   bullets,
 }: {
+  id?: string;
   icon: any;
   tag: string;
   title: string;
@@ -174,7 +174,7 @@ function Path({
   bullets: string[];
 }) {
   return (
-    <article className="rounded-2xl border border-bone/10 bg-bone/[0.02] p-7 h-full hover:border-lamp/30 transition-colors">
+    <article id={id} className="rounded-2xl border border-bone/10 bg-bone/[0.02] p-7 h-full hover:border-lamp/30 transition-colors scroll-mt-28">
       <div className="flex items-center justify-between mb-5">
         <div className="w-10 h-10 rounded-xl bg-lamp/10 flex items-center justify-center">
           <Icon className="w-5 h-5 text-lamp" />

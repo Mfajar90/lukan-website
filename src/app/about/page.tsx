@@ -5,7 +5,8 @@ import Reveal from '@/components/Reveal';
 
 export const metadata: Metadata = {
   title: 'About',
-  description: 'About Lukan Wind Robotics — Danish robotics company building autonomous internal blade inspection crawlers. Based in Lystrup, Denmark.',
+  description:
+    'A Danish robotics company building Detectra, Quantra and Fenestra — internal wind turbine blade inspection. Based in Lystrup.',
 };
 
 export default function AboutPage() {
@@ -18,10 +19,10 @@ export default function AboutPage() {
             A small Danish robotics team with a clear bias toward inspection done right.
           </h1>
           <p className="mt-6 text-lg text-bone/70 max-w-2xl leading-relaxed">
-            Lukan Wind Robotics builds the only autonomous crawler robot that
-            fits through a standard 90&nbsp;mm blade inspection port. We design
-            the hardware, write the on-board software, and run pilot inspections
-            end-to-end for the customers shaping our roadmap.
+            We design the hardware, write the on-board software, and run pilot
+            inspections end-to-end. Three products today: Detectra (the
+            crawler), Quantra (defect quantification, in development), and
+            Fenestra (the cloud portal).
           </p>
         </Reveal>
       </section>
@@ -34,7 +35,7 @@ export default function AboutPage() {
             <ValueCard
               icon={Target}
               title="Inspection-grade, not demo-grade"
-              body="Every finding traces back to the exact frame. Every report is auditable. The recordings live on-board the crawler &mdash; not in someone&apos;s downloads folder."
+              body="Every finding traces back to the exact frame. Every report is auditable. Recordings live on-board the crawler &mdash; not in someone&apos;s downloads folder."
             />
           </Reveal>
           <Reveal delay={0.1}>
@@ -76,9 +77,9 @@ export default function AboutPage() {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <p className="eyebrow mb-3">Why &ldquo;Lukan&rdquo;?</p>
+            <p className="eyebrow mb-3">The work</p>
             <h2 className="text-3xl font-bold tracking-tight">
-              Light wherever the asset is.
+              Detect. Quantify. Act.
             </h2>
             <p className="mt-5 text-bone/70 leading-relaxed">
               Inspection is, fundamentally, about seeing. Bringing light into

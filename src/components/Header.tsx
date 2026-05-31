@@ -5,7 +5,8 @@ import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
 const nav = [
-  { name: 'Technology', href: '/technology' },
+  { name: 'Home', href: '/' },
+  { name: 'Products', href: '/products' },
   { name: 'Services', href: '/services' },
   { name: 'About', href: '/about' },
   { name: 'Contact', href: '/contact' },
@@ -21,7 +22,7 @@ export default function Header() {
           <img
             src="/brand/lukan-lockup-horizontal-dark.svg"
             alt="Lukan Wind Robotics"
-            className="h-16 w-auto"
+            className="h-[4.8rem] w-auto"
           />
         </Link>
 
@@ -41,7 +42,7 @@ export default function Header() {
             rel="noopener"
             className="btn-primary text-sm py-2 px-4"
           >
-            Cloud Portal
+            Cloud Portal: Fenestra
           </a>
         </nav>
 
@@ -73,7 +74,7 @@ export default function Header() {
               rel="noopener"
               className="btn-primary text-sm py-2 px-4 mt-2 self-start"
             >
-              Cloud Portal
+              Fenestra
             </a>
           </nav>
         </div>

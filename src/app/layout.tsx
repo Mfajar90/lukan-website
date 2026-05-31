@@ -21,25 +21,27 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://lukan.dk'),
   title: {
-    default: 'Lukan Wind Robotics — Light wherever the asset is',
+    default: 'Lukan Wind Robotics — Detect. Quantify. Act.',
     template: '%s · Lukan Wind Robotics',
   },
   description:
-    'Lukan Wind Robotics builds the Crawler V3 — an autonomous internal wind turbine blade inspection robot. 8K 360° vision, browser-driven, fully offline. Compatible with all major turbine manufacturers.',
+    'Robots and software for internal wind turbine blade inspection. Detectra finds defects. Quantra quantifies them. Fenestra holds the fleet.',
   keywords: [
     'wind turbine inspection',
     'internal blade inspection',
-    'Crawler V3',
+    'Detectra',
+    'Quantra',
+    'Fenestra',
     'autonomous blade inspection',
+    'defect quantification',
     'wind robotics',
     'Lystrup',
     'Aarhus',
     'Denmark',
-    'wind energy',
   ],
   openGraph: {
     title: 'Lukan Wind Robotics',
-    description: 'Light wherever the asset is. The Crawler V3 — internal blade inspection, reinvented.',
+    description: 'Detectra · Quantra · Fenestra — robots and software for internal blade inspection.',
     url: 'https://lukan.dk',
     siteName: 'Lukan Wind Robotics',
     locale: 'en_DK',

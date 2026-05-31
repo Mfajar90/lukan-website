@@ -13,22 +13,21 @@ export default function Footer() {
               className="h-9 w-auto mb-4"
             />
             <p className="text-sm text-bone/60 max-w-sm leading-relaxed">
-              Light wherever the asset is. Autonomous crawler robots for
-              internal wind turbine blade inspection — engineered in Lystrup,
-              Denmark, deployed across Europe.
+              Detect. Quantify. Act. Robots and software for internal wind
+              turbine blade inspection — engineered in Denmark.
             </p>
           </div>
 
           <div>
             <h4 className="text-[11px] uppercase tracking-[0.25em] text-bone/40 mb-3">Site</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/technology" className="text-bone/70 hover:text-lamp">Technology</Link></li>
+              <li><Link href="/products" className="text-bone/70 hover:text-lamp">Products</Link></li>
               <li><Link href="/services" className="text-bone/70 hover:text-lamp">Services</Link></li>
               <li><Link href="/about" className="text-bone/70 hover:text-lamp">About</Link></li>
               <li><Link href="/contact" className="text-bone/70 hover:text-lamp">Contact</Link></li>
               <li>
                 <a href="https://portal.lukan.dk" target="_blank" rel="noopener" className="text-bone/70 hover:text-lamp">
-                  Cloud Portal ↗
+                  Fenestra ↗
                 </a>
               </li>
             </ul>
@@ -51,7 +50,7 @@ export default function Footer() {
 
         <div className="hairline mt-10 pt-6 flex flex-wrap justify-between items-center gap-2 text-xs text-bone/40">
           <p>© {new Date().getFullYear()} Lukan Wind Robotics ApS — All rights reserved.</p>
-          <p className="italic">Light wherever the asset is.</p>
+          <p className="italic">Detect. Quantify. Act.</p>
         </div>
       </div>
     </footer>

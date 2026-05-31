@@ -38,7 +38,7 @@ export default function ContactPage() {
         />
         <ContactCard
           icon={ExternalLink}
-          label="Cloud Portal (customers)"
+          label="Fenestra (customers)"
           value="portal.lukan.dk"
           href="https://portal.lukan.dk"
           external
