@@ -16,6 +16,9 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ['400', '500'],
   variable: '--font-jetbrains-mono',
   display: 'swap',
+  // Only used for small accent labels, not above-the-fold LCP text — don't
+  // let it compete for early bandwidth with the body/heading font.
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -26,19 +29,6 @@ export const metadata: Metadata = {
   },
   description:
     'Robots and software for internal wind turbine blade inspection. Detectra finds defects. Quantra quantifies them. Fenestra holds the fleet.',
-  keywords: [
-    'wind turbine inspection',
-    'internal blade inspection',
-    'Detectra',
-    'Quantra',
-    'Fenestra',
-    'autonomous blade inspection',
-    'defect quantification',
-    'wind robotics',
-    'Lystrup',
-    'Aarhus',
-    'Denmark',
-  ],
   // Home page canonical/OG live here because the home page is a client
   // component and cannot export its own metadata. Sub-pages override
   // alternates.canonical and openGraph with page-specific values.

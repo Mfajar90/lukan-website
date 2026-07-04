@@ -46,11 +46,11 @@ export default function ProductsPage() {
         verb="Detect"
         status="Pilot units"
         headline={<>The inspection<br />crawler.</>}
-        body="A remotely controlled robot that reaches up to 80% of the blade length and captures the inside in 8K 360°. Compatible with all major turbine manufacturers."
+        body="A remotely controlled robot that reaches up to 80% of the blade length and captures the inside in 8K 360° — around 15 minutes to scan a blade. Compatible with all major turbine manufacturers."
         facts={[
           { v: '230 mm', l: 'Compact · full-circle light' },
-          { v: '8K · 360°', l: 'Panoramic capture' },
-          { v: 'Hours', l: 'From blade to your office' },
+          { v: '~15 min', l: 'To scan a blade' },
+          { v: 'Hours', l: 'From scan to your office' },
         ]}
       />
 
@@ -65,9 +65,9 @@ export default function ProductsPage() {
         headline={<>From finding defects<br />to <span className="text-lamp">measuring</span> them.</>}
         body="A second-generation crawler with on-board NDT add-ons — sizing cracks and sub-surface defects. Built so an inspection answers not just what is there, but how severe — with no guesswork."
         facts={[
-          { v: 'Micron-grade', l: 'Defect sizing' },
-          { v: 'Auto', l: 'Severity scoring' },
-          { v: '2027', l: 'In development' },
+          { v: 'Micron-grade', l: 'Target defect sizing' },
+          { v: 'Auto', l: 'Target severity scoring' },
+          { v: '2027', l: 'Targeted availability' },
         ]}
         cta={{ label: 'Join the pilot list', href: '/contact' }}
       />
@@ -103,7 +103,7 @@ export default function ProductsPage() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/contact" className="btn-primary">
-                Request a walkthrough <ArrowRight className="w-4 h-4" />
+                Book a walkthrough <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>

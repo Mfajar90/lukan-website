@@ -115,7 +115,7 @@ export default function HomePage() {
                 name="Detectra"
                 verb="Detect"
                 tagline="The inspection crawler."
-                body="Remote-controlled, plug-and-play robot that goes inside the blade. 8K 360° vision. 15 minutes per blade."
+                body="Remote-controlled, plug-and-play robot that travels up to 80% of the blade from the inside. 8K 360° vision. ~15 minutes to scan a blade."
                 status="Pilot units"
               />
             </Reveal>

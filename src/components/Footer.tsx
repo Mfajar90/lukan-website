@@ -24,7 +24,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-[11px] uppercase tracking-[0.25em] text-bone/60 mb-3">Site</h4>
+            <h2 className="text-[11px] uppercase tracking-[0.25em] text-bone/60 mb-3">Site</h2>
             <ul className="space-y-2 text-sm">
               <li><Link href="/products" className="text-bone/70 hover:text-lamp">Products</Link></li>
               <li><Link href="/services" className="text-bone/70 hover:text-lamp">Services</Link></li>
@@ -40,7 +40,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-[11px] uppercase tracking-[0.25em] text-bone/60 mb-3">Contact</h4>
+            <h2 className="text-[11px] uppercase tracking-[0.25em] text-bone/60 mb-3">Contact</h2>
             <ul className="space-y-2 text-sm">
               <li className="flex items-start gap-2 text-bone/70">
                 <Mail className="w-3.5 h-3.5 mt-1 flex-shrink-0" />
