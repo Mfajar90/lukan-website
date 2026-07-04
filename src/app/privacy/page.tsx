@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   },
 };
 
-// Keep in sync with the CVR shown in the footer.
-const CVR = ''; // TODO: company CVR number
+// Keep in sync with the CVR shown in the footer. Registered entity "LUKAN ApS".
+const CVR = '46421752';
 
 const LAST_UPDATED = '4 July 2026';
 

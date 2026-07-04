@@ -1,10 +1,8 @@
 import Link from 'next/link';
 import { Mail, MapPin } from 'lucide-react';
 
-// TODO: set the company's real CVR (Central Business Register) number.
-// Danish e-commerce law expects it to be shown. Left blank renders cleanly
-// (the "CVR …" segment is omitted) until the real value is provided.
-const CVR = '';
+// CVR (Central Business Register) number — registered entity "LUKAN ApS".
+const CVR = '46421752';
 
 export default function Footer() {
   return (
