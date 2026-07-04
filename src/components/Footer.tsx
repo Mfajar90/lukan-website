@@ -1,6 +1,11 @@
 import Link from 'next/link';
 import { Mail, MapPin } from 'lucide-react';
 
+// TODO: set the company's real CVR (Central Business Register) number.
+// Danish e-commerce law expects it to be shown. Left blank renders cleanly
+// (the "CVR …" segment is omitted) until the real value is provided.
+const CVR = '';
+
 export default function Footer() {
   return (
     <footer className="bg-ink border-t border-bone/5 mt-24">
@@ -19,12 +24,13 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-[11px] uppercase tracking-[0.25em] text-bone/40 mb-3">Site</h4>
+            <h4 className="text-[11px] uppercase tracking-[0.25em] text-bone/60 mb-3">Site</h4>
             <ul className="space-y-2 text-sm">
               <li><Link href="/products" className="text-bone/70 hover:text-lamp">Products</Link></li>
               <li><Link href="/services" className="text-bone/70 hover:text-lamp">Services</Link></li>
               <li><Link href="/about" className="text-bone/70 hover:text-lamp">About</Link></li>
               <li><Link href="/contact" className="text-bone/70 hover:text-lamp">Contact</Link></li>
+              <li><Link href="/privacy" className="text-bone/70 hover:text-lamp">Privacy</Link></li>
               <li>
                 <a href="https://portal.lukan.dk" target="_blank" rel="noopener" className="text-bone/70 hover:text-lamp">
                   Fenestra ↗
@@ -34,7 +40,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-[11px] uppercase tracking-[0.25em] text-bone/40 mb-3">Contact</h4>
+            <h4 className="text-[11px] uppercase tracking-[0.25em] text-bone/60 mb-3">Contact</h4>
             <ul className="space-y-2 text-sm">
               <li className="flex items-start gap-2 text-bone/70">
                 <Mail className="w-3.5 h-3.5 mt-1 flex-shrink-0" />
@@ -48,8 +54,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="hairline mt-10 pt-6 flex flex-wrap justify-between items-center gap-2 text-xs text-bone/40">
-          <p>© {new Date().getFullYear()} Lukan Wind Robotics ApS — All rights reserved.</p>
+        <div className="hairline mt-10 pt-6 flex flex-wrap justify-between items-center gap-2 text-xs text-bone/60">
+          <p>© {new Date().getFullYear()} Lukan Wind Robotics ApS — {CVR ? `CVR ${CVR} — ` : ''}All rights reserved.</p>
           <p className="italic">Detect. Quantify. Act.</p>
         </div>
       </div>

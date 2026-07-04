@@ -7,6 +7,16 @@ export const metadata: Metadata = {
   title: 'Products',
   description:
     'Detectra finds defects inside the blade. Quantra measures them. Fenestra holds the fleet of inspections.',
+  alternates: { canonical: '/products' },
+  openGraph: {
+    title: 'Products · Lukan Wind Robotics',
+    description:
+      'Detectra finds defects inside the blade. Quantra measures them. Fenestra holds the fleet of inspections.',
+    url: '/products',
+    siteName: 'Lukan Wind Robotics',
+    locale: 'en_DK',
+    type: 'website',
+  },
 };
 
 type Status = 'Pilot units' | 'In development' | 'Live';

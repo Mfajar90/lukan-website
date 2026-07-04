@@ -4,6 +4,16 @@ import { Mail, MapPin, ExternalLink } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'Contact',
   description: 'Get in touch with Lukan Wind Robotics — blade inspection campaigns, technology questions, partnerships.',
+  alternates: { canonical: '/contact' },
+  openGraph: {
+    title: 'Contact · Lukan Wind Robotics',
+    description:
+      'Get in touch with Lukan Wind Robotics — blade inspection campaigns, technology questions, partnerships.',
+    url: '/contact',
+    siteName: 'Lukan Wind Robotics',
+    locale: 'en_DK',
+    type: 'website',
+  },
 };
 
 export default function ContactPage() {
@@ -79,7 +89,7 @@ function ContactCard({
     <>
       <div className="flex items-center gap-2 mb-3">
         <Icon className="w-4 h-4 text-lamp" />
-        <p className="text-[10px] uppercase tracking-[0.25em] text-bone/40">{label}</p>
+        <p className="text-[10px] uppercase tracking-[0.25em] text-bone/60">{label}</p>
       </div>
       <p className="text-lg text-bone font-medium">{value}</p>
     </>

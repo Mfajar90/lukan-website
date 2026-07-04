@@ -17,6 +17,27 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Visible keyboard focus for all interactive elements (WCAG 2.4.7). */
+:focus-visible {
+  outline: 2px solid #FFB84D;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Honour users who ask for reduced motion (WCAG 2.3.3). */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 @layer components {
   .container-page {
     @apply max-w-6xl mx-auto px-6 md:px-10;

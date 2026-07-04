@@ -7,6 +7,16 @@ export const metadata: Metadata = {
   title: 'About',
   description:
     'A Danish robotics company building Detectra, Quantra and Fenestra — internal wind turbine blade inspection. Based in Lystrup.',
+  alternates: { canonical: '/about' },
+  openGraph: {
+    title: 'About · Lukan Wind Robotics',
+    description:
+      'A Danish robotics company building Detectra, Quantra and Fenestra — internal wind turbine blade inspection. Based in Lystrup.',
+    url: '/about',
+    siteName: 'Lukan Wind Robotics',
+    locale: 'en_DK',
+    type: 'website',
+  },
 };
 
 export default function AboutPage() {

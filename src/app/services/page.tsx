@@ -7,6 +7,16 @@ export const metadata: Metadata = {
   title: 'How we work',
   description:
     'Buy Detectra, hire us to inspect, or pilot together. Built for operators, OEMs and service firms.',
+  alternates: { canonical: '/services' },
+  openGraph: {
+    title: 'How we work · Lukan Wind Robotics',
+    description:
+      'Buy Detectra, hire us to inspect, or pilot together. Built for operators, OEMs and service firms.',
+    url: '/services',
+    siteName: 'Lukan Wind Robotics',
+    locale: 'en_DK',
+    type: 'website',
+  },
 };
 
 export default function ServicesPage() {

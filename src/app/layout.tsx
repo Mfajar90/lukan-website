@@ -19,7 +19,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://lukan.dk'),
+  metadataBase: new URL('https://www.lukan.dk'),
   title: {
     default: 'Lukan Wind Robotics — Detect. Quantify. Act.',
     template: '%s · Lukan Wind Robotics',
@@ -39,13 +39,24 @@ export const metadata: Metadata = {
     'Aarhus',
     'Denmark',
   ],
+  // Home page canonical/OG live here because the home page is a client
+  // component and cannot export its own metadata. Sub-pages override
+  // alternates.canonical and openGraph with page-specific values.
+  alternates: { canonical: '/' },
   openGraph: {
-    title: 'Lukan Wind Robotics',
-    description: 'Detectra · Quantra · Fenestra — robots and software for internal blade inspection.',
-    url: 'https://lukan.dk',
+    title: 'Lukan Wind Robotics — Detect. Quantify. Act.',
+    description:
+      'Robots and software for internal wind turbine blade inspection. Detectra finds defects. Quantra quantifies them. Fenestra holds the fleet.',
+    url: '/',
     siteName: 'Lukan Wind Robotics',
     locale: 'en_DK',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Lukan Wind Robotics — Detect. Quantify. Act.',
+    description:
+      'Detectra · Quantra · Fenestra — robots and software for internal blade inspection.',
   },
   icons: { icon: '/favicon.svg' },
 };

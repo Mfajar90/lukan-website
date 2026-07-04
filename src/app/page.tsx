@@ -72,7 +72,7 @@ export default function HomePage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 1 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 font-mono text-[10px] text-bone/40 uppercase tracking-[0.3em] flex items-center gap-2"
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 font-mono text-[10px] text-bone/60 uppercase tracking-[0.3em] flex items-center gap-2"
           aria-hidden
         >
           Scroll
@@ -289,7 +289,7 @@ function ProductCard({
       <h3 className="text-3xl md:text-4xl font-bold tracking-tight text-bone group-hover:text-lamp transition-colors">{name}</h3>
       <p className="mt-2 text-lamp/90 font-medium">{tagline}</p>
       <p className="mt-5 text-bone/65 text-sm leading-relaxed">{body}</p>
-      <p className="mt-6 text-xs font-mono uppercase tracking-[0.2em] text-bone/40 group-hover:text-lamp transition-colors">
+      <p className="mt-6 text-xs font-mono uppercase tracking-[0.2em] text-bone/60 group-hover:text-lamp transition-colors">
         Read more →
       </p>
     </Link>
@@ -321,7 +321,7 @@ function ServiceCard({
         {title}
       </h3>
       <p className="mt-5 text-bone/65 text-sm leading-relaxed">{body}</p>
-      <p className="mt-auto pt-6 text-xs font-mono uppercase tracking-[0.2em] text-bone/40 group-hover:text-lamp transition-colors">
+      <p className="mt-auto pt-6 text-xs font-mono uppercase tracking-[0.2em] text-bone/60 group-hover:text-lamp transition-colors">
         Read more →
       </p>
     </Link>

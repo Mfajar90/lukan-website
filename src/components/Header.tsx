@@ -26,7 +26,7 @@ export default function Header() {
           />
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8">
+        <nav aria-label="Primary" className="hidden md:flex items-center gap-8">
           {nav.map((n) => (
             <Link
               key={n.href}
@@ -47,9 +47,12 @@ export default function Header() {
         </nav>
 
         <button
-          className="md:hidden p-2 text-bone/80"
+          type="button"
+          className="md:hidden inline-flex items-center justify-center p-3 min-w-11 min-h-11 text-bone/80"
           onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-expanded={open}
+          aria-controls="mobile-nav"
         >
           {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
@@ -57,13 +60,13 @@ export default function Header() {
 
       {open && (
         <div className="md:hidden border-t border-bone/5 bg-ink">
-          <nav className="container-page py-4 flex flex-col gap-3">
+          <nav id="mobile-nav" aria-label="Primary" className="container-page py-4 flex flex-col gap-3">
             {nav.map((n) => (
               <Link
                 key={n.href}
                 href={n.href}
                 onClick={() => setOpen(false)}
-                className="text-sm text-bone/80 hover:text-lamp py-1.5"
+                className="block text-sm text-bone/80 hover:text-lamp py-3"
               >
                 {n.name}
               </Link>
